@@ -1,11 +1,11 @@
 import allure
 import time
 
-from Homework_10.mid.pages.registration_page_mid import RegistrationPage
+from pages.registration_page_mid import RegistrationPage
 
 
 @allure.step("Проверка формы регистрации")
-def test_hw10():
+def test_hw11():
     registration_page = RegistrationPage()
 
     registration_page.open_form()
