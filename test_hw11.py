@@ -1,7 +1,7 @@
 import allure
 import time
 
-from  .pages.registration_page_mid import RegistrationPage
+from  pages.registration_page_mid import RegistrationPage
 
 
 def test_hw11():
