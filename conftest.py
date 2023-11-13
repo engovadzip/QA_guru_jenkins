@@ -1,7 +1,6 @@
 import os
 
 import pytest
-import selenium
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selene import browser
@@ -42,10 +41,7 @@ def setup_browser(request):
     login = os.getenv('LOGIN')
     password = os.getenv('PASSWORD')
 
-    driver = webdriver.Remote(
-        command_executor=f"https://{login}:{password}@selenoid.autotests.cloud/wd/hub",
-        options=options
-    )
+    driver = webdriver.Remote(command_executor=f"https://{login}:{password}@selenoid.autotests.cloud/wd/hub", options=options)
     browser.config.driver = driver
 
     yield browser
