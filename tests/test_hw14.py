@@ -8,6 +8,7 @@ def test_hw14(setup_browser):
     browser = setup_browser
 
     with allure.step('Открываем форму регистрации'):
+        browser.open('https://demoqa.com/automation-practice-form')
         browser.element(".practice-form-wrapper").should(have.text("Student Registration Form"))
         browser.driver.execute_script("$('footer').remove()")
         browser.driver.execute_script("$('#fixedban').remove()")
@@ -42,7 +43,7 @@ def test_hw14(setup_browser):
         browser.element('//*[text()="Karnal"]').click()
 
     with allure.step('Нажатие "Submit"'):
-        browser.registration_page.submit_button_click()
+        browser.element('#submit').click()
 
     with allure.step('Проверка введенных данных'):
         browser.element("#example-modal-sizes-title-lg").should(have.text("Thanks for submitting the form"))
